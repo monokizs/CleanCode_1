@@ -80,6 +80,75 @@ describe("Calculator tests", () => {
      ********** Sub **********
      *************************/
 
+     test('Be: két pozitív egész szám (a>b), Előállítja a két szám különbségét, Ki: a-b', () => {
+        // Arrange
+        const a = 5;
+        const b = 3;
+        const expected = 2; // a-b
+
+        // Act
+        const result = calculator.Sub(a,b);
+        
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: két pozitív egész szám (b>a), Előállítja a két szám különbségét, Ki: a-b', () => {
+        // Arrange
+        const a = 3;
+        const b = 5;
+        const expected = -2; // a-b
+
+        // Act
+        const result = calculator.Sub(a,b);
+        
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: két negatív egész szám, Előállítja a két szám különbségét, Ki: a-b', () => {
+        // Arrange
+        const a = -5;
+        const b = -3;
+        const expected = -2; // a-b
+
+        // Act
+        const result = calculator.Sub(a,b);
+        
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: egy negatív egész szám, Előállítja a 0 és a szám különbségét, Ki: 0-a', () => {
+        // Arrange
+        const a = -5;
+        const expected = 5; // 0-b
+
+        // Act
+        const result = calculator.Sub(0,a);
+        
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: két lebegőpontos szám, Előállítja a két szám különbségét, Ki: a-b', () => {
+        // Arrange
+        const a = 3.1415;
+        const b = 2.7182;
+        const expected = 0.4233; // a-b
+
+        // Act
+        const result = Number((Math.round(calculator.Sub(a,b)*10000)/10000).toFixed(4));
+        
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
     /*************************
      ********** Mul **********
      *************************/
