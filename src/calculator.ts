@@ -19,8 +19,11 @@ export class Calculator {
             return a / b;
     }
 
-    public Sqrt(a: number): number {
-        return Math.sqrt(a);
+    public Sqrt(a: number) {
+        if (a<0)
+            return "Hiba";
+        else
+            return Math.sqrt(a);
     }
 
     public Pow(a: number, b: number): number {

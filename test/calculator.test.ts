@@ -230,7 +230,7 @@ describe("Calculator tests", () => {
         // Act
         let result = calculator.Div(a,b);
         if (typeof(result)!="string")
-            result = Number(Number(calculator.Div(a,b)).toFixed(4));
+            result = Number(Number(result).toFixed(4));
         
         // Assert
         expect(result).toBe(expected);
@@ -245,7 +245,7 @@ describe("Calculator tests", () => {
         // Act
         let result = calculator.Div(a,b);
         if (typeof(result)!="string")
-            result = Number(Number(calculator.Div(a,b)).toFixed(4));
+            result = Number(Number(result).toFixed(4));
 
         // Assert
         expect(result).toBe(expected);
@@ -260,7 +260,7 @@ describe("Calculator tests", () => {
         // Act
         let result = calculator.Div(a,b);
         if (typeof(result)!="string")
-            result = Number(Number(calculator.Div(a,b)).toFixed());
+            result = Number(Number(result).toFixed());
 
         // Assert
         expect(result).toBe(expected);
@@ -275,7 +275,7 @@ describe("Calculator tests", () => {
         // Act
         let result = calculator.Div(a,b);
         if (typeof(result)!="string")
-            result = Number(Number(calculator.Div(a,b)).toFixed(4));
+            result = Number(Number(result).toFixed(4));
 
         // Assert
         expect(result).toBe(expected);
@@ -287,6 +287,48 @@ describe("Calculator tests", () => {
     /*************************
      ********* Sqrt **********
      *************************/
+     test('Be: egy egész szám, Előállítja a négyzetgyök(szám) értékét, Ki: négyzegyök(szám) eredménye', () => {
+        // Arrange
+        const a = 5;
+        const expected = 2.2361; // sqrt(a)
+
+        // Act
+        let result = calculator.Sqrt(a);
+        if (typeof(result)!="string")
+            result = Number(Number(result).toFixed(4));
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: egy egész szám (a=0), Előállítja a négyzetgyök(szám) értékét, Ki: négyzegyök(szám) eredménye', () => {
+        // Arrange
+        const a = 0;
+        const expected = 0; // sqrt(a)
+
+        // Act
+        let result = calculator.Sqrt(a);
+        if (typeof(result)!="string")
+            result = Number(Number(result).toFixed(4));
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: egy egész szám (a<0), Előállítja a négyzetgyök(szám) értékét, Ki: négyzegyök(szám) eredménye - Hiba', () => {
+        // Arrange
+        const a = -5;
+        const expected = "Hiba"; // sqrt(a)
+
+        // Act
+        let result = calculator.Sqrt(a);
+        if (typeof(result)!="string")
+            result = Number(Number(result).toFixed(4));
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
 
     /*************************
      ********* Pow ***********
