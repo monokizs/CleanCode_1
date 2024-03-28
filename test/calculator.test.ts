@@ -190,7 +190,7 @@ describe("Calculator tests", () => {
         // Arrange
         const a = 3.1415;
         const b = 2.7182;
-        const expected = 8.5392253; // a*b
+        const expected = 8.5392253; 
 
         // Act
         const result = calculator.Multiplication(a, b);
