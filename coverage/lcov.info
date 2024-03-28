@@ -7,10 +7,10 @@ FN:15,Div
 FN:19,Sqrt
 FN:23,Pow
 FNF:6
-FNH:2
+FNH:3
 FNDA:6,Add
 FNDA:5,Sub
-FNDA:0,Mul
+FNDA:6,Mul
 FNDA:0,Div
 FNDA:0,Sqrt
 FNDA:0,Pow
@@ -25,8 +25,8 @@ DA:8,5
 DA:9,5
 DA:10,1
 DA:11,1
-DA:12,0
-DA:13,0
+DA:12,6
+DA:13,6
 DA:14,1
 DA:15,1
 DA:16,0
@@ -41,9 +41,10 @@ DA:24,0
 DA:25,0
 DA:26,1
 LF:26
-LH:18
+LH:20
 BRDA:3,0,0,6
 BRDA:7,1,0,5
-BRF:2
-BRH:2
+BRDA:11,2,0,6
+BRF:3
+BRH:3
 end_of_record

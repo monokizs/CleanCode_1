@@ -152,7 +152,72 @@ describe("Calculator tests", () => {
     /*************************
      ********** Mul **********
      *************************/
-    
+     test('Be: két egész szám, Előállítja a szorzatot, Ki: két szám szorzata', () => {
+        // Arrange
+        const a = 5;
+        const b = 3;
+        const expected = 15; // a*b
+
+        // Act
+        const result = calculator.Mul(a, b);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: két egész szám - egyik negatív, Előállítja az szorzatot, Ki: két szám szorzata', () => {
+        // Arrange
+        const a = -5;
+        const b = 3;
+        const expected = -15; // a*b
+
+        // Act
+        const result = calculator.Mul(a, b);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: egy egész szám, Előállítja a 0*szám szorzatot, Ki: 0 és a szám szorzata', () => {
+        // Arrange
+        const a = 0;
+        const b = 3;
+        const expected = 0; // a*b
+
+        // Act
+        const result = calculator.Mul(a, b);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: két lebegőpontos szám, Előállítja a két szám szorzatát, Ki: a két szám szorzata', () => {
+        // Arrange
+        const a = 3.1415;
+        const b = 2.7182;
+        const expected = 8.5392253; // a*b
+
+        // Act
+        const result = calculator.Mul(a, b);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: két egész szám, Előállítja a két szám szorzatát, Ki: a*b ?= b*a', () => {
+        // Arrange
+        const a = 5;
+        const b = 3;
+
+        // Act
+        const result1 = calculator.Mul(a, b);
+        const result2 = calculator.Mul(b, a);
+
+        // Assert
+        expect(result1).toBe(result2);
+    })
+
+
     /*************************
      ********** Div **********
      *************************/
