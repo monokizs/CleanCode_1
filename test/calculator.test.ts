@@ -333,6 +333,148 @@ describe("Calculator tests", () => {
     /*************************
      ********* Pow ***********
      *************************/
+     test('Be: két egész szám, Előállítja az a^b hatványt, Ki: a^b', () => {
+        // Arrange
+        const a = 5;
+        const b = 3;
+        const expected = 125; // a^b
+
+        // Act
+        const result = calculator.Pow(a, b);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: két egész szám (a<0), Előállítja az a^b hatványt, Ki: a^b', () => {
+        // Arrange
+        const a = -5;
+        const b = 3;
+        const expected = -125; // a^b
+
+        // Act
+        const result = calculator.Pow(a, b);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: két egész szám (b<0), Előállítja az a^b hatványt, Ki: a^b', () => {
+        // Arrange
+        const a = 5;
+        const b = -3;
+        const expected = 0.008; // a^b
+
+        // Act
+        const result = Number(calculator.Pow(a, b).toFixed(3));
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: két egész szám (a<0 és b<0), Előállítja az a^b hatványt, Ki: a^b', () => {
+        // Arrange
+        const a = -5;
+        const b = -3;
+        const expected = -0.008; // a^b
+
+        // Act
+        const result = Number(calculator.Pow(a, b).toFixed(3));
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: egy egész szám (a>0 és b=0), Előállítja az a^0 hatványt, Ki: a^0', () => {
+        // Arrange
+        const a = 5;
+        const b = 0;
+        const expected = 1; // a^b
+
+        // Act
+        const result = calculator.Pow(a, b);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: egy egész szám (a=0 és b>0), Előállítja az 0^b hatványt, Ki: 0^b', () => {
+        // Arrange
+        const a = 0;
+        const b = 3;
+        const expected = 0; // a^b
+
+        // Act
+        const result = calculator.Pow(a, b);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: két lebegőpontos szám, Előállítja az a^b hatványt, Ki: a^b', () => {
+        // Arrange
+        const a = 3.1415;
+        const b = 2.7182;
+        const expected = 22.4553; // a^b
+
+        // Act
+        const result = Number(calculator.Pow(a, b).toFixed(4));
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: egy egész szám (b>0), Előállítja az MAX_VALUE^b hatványt, Ki: MAX_VALUE^b', () => {
+        // Arrange
+        const a = Number.MAX_VALUE;
+        const b = 2;
+        const expected = Infinity; // a^b
+
+        // Act
+        const result = calculator.Pow(a, b);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: egy egész szám (a>0), Előállítja az a^MAX_VALUE hatványt, Ki: a^MAX_VALUE', () => {
+        // Arrange
+        const a = 5;
+        const b = Number.MAX_VALUE;
+        const expected = Infinity; // a^b
+
+        // Act
+        const result = calculator.Pow(a, b);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: egy egész szám (b>0), Előállítja az MIN_VALUE^b hatványt, Ki: MIN_VALUE^b', () => {
+        // Arrange
+        const a = Number.MIN_VALUE;
+        const b = 2;
+        const expected = 0; // a^b
+
+        // Act
+        const result = calculator.Pow(a, b);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: egy egész szám (a>0), Előállítja az a^MIN_VALUE hatványt, Ki: a^MIN_VALUE', () => {
+        // Arrange
+        const a = 5;
+        const b = Number.MIN_VALUE;
+        const expected = 1; // a^b
+
+        // Act
+        const result = calculator.Pow(a, b);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
 
 
 })
