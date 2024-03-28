@@ -142,8 +142,8 @@ describe("Calculator tests", () => {
         const expected = 0.4233; // a-b
 
         // Act
-        const result = Number((Math.round(calculator.Sub(a,b)*10000)/10000).toFixed(4));
-        
+        //const result = Number((Math.round(calculator.Sub(a,b)*10000)/10000).toFixed(4));
+        const result = Number(calculator.Sub(a,b).toFixed(4));
 
         // Assert
         expect(result).toBe(expected);
@@ -221,7 +221,69 @@ describe("Calculator tests", () => {
     /*************************
      ********** Div **********
      *************************/
+     test('Be: két egész szám, Előállítja az osztás eredményét, Ki: két szám osztásának eredménye', () => {
+        // Arrange
+        const a = 5;
+        const b = 3;
+        const expected = 1.6667; // a/b
 
+        // Act
+        let result = calculator.Div(a,b);
+        if (typeof(result)!="string")
+            result = Number(Number(calculator.Div(a,b)).toFixed(4));
+        
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: két egész szám - egyik negatív, Előállítja az osztás eredményét, Ki: két szám osztásának eredménye', () => {
+        // Arrange
+        const a = -5;
+        const b = 3;
+        const expected = -1.6667; // a/b
+
+        // Act
+        let result = calculator.Div(a,b);
+        if (typeof(result)!="string")
+            result = Number(Number(calculator.Div(a,b)).toFixed(4));
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: egy egész szám, Előállítja a 0/szám eredményét, Ki: 0/szám eredménye', () => {
+        // Arrange
+        const a = 0;
+        const b = 3;
+        const expected = 0; // a/b
+
+        // Act
+        let result = calculator.Div(a,b);
+        if (typeof(result)!="string")
+            result = Number(Number(calculator.Div(a,b)).toFixed());
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Be: egy egész szám, Előállítja a szám/0 eredményét, Ki: szám/0 eredménye', () => {
+        // Arrange
+        const a = 5;
+        const b = 0;
+        const expected = "Hiba"; // a/b
+
+        // Act
+        let result = calculator.Div(a,b);
+        if (typeof(result)!="string")
+            result = Number(Number(calculator.Div(a,b)).toFixed(4));
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    
+
+    
     /*************************
      ********* Sqrt **********
      *************************/

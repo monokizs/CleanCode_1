@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1711631077450" clover="3.2.0">
-  <project timestamp="1711631077450" name="All files">
-    <metrics statements="26" coveredstatements="20" conditionals="3" coveredconditionals="3" methods="6" coveredmethods="3" elements="35" coveredelements="26" complexity="0" loc="26" ncloc="26" packages="1" files="1" classes="1"/>
+<coverage generated="1711632599129" clover="3.2.0">
+  <project timestamp="1711632599129" name="All files">
+    <metrics statements="29" coveredstatements="25" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="4" elements="41" coveredelements="35" complexity="0" loc="29" ncloc="29" packages="1" files="1" classes="1"/>
     <file name="calculator.ts" path="G:\CUBIXEDU\Clean code elvek és unit tesztelés a gyakorlatban\munka\CleanCode_1\src\calculator.ts">
-      <metrics statements="26" coveredstatements="20" conditionals="3" coveredconditionals="3" methods="6" coveredmethods="3"/>
+      <metrics statements="29" coveredstatements="25" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="4"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
@@ -18,18 +18,21 @@
       <line num="12" count="6" type="stmt"/>
       <line num="13" count="6" type="stmt"/>
       <line num="14" count="1" type="stmt"/>
-      <line num="15" count="1" type="stmt"/>
-      <line num="16" count="0" type="stmt"/>
-      <line num="17" count="0" type="stmt"/>
-      <line num="18" count="1" type="stmt"/>
-      <line num="19" count="1" type="stmt"/>
-      <line num="20" count="0" type="stmt"/>
-      <line num="21" count="0" type="stmt"/>
+      <line num="15" count="1" type="cond" truecount="1" falsecount="0"/>
+      <line num="16" count="7" type="stmt"/>
+      <line num="17" count="7" type="cond" truecount="1" falsecount="0"/>
+      <line num="18" count="6" type="cond" truecount="1" falsecount="0"/>
+      <line num="19" count="6" type="stmt"/>
+      <line num="20" count="7" type="stmt"/>
+      <line num="21" count="1" type="stmt"/>
       <line num="22" count="1" type="stmt"/>
-      <line num="23" count="1" type="stmt"/>
+      <line num="23" count="0" type="stmt"/>
       <line num="24" count="0" type="stmt"/>
-      <line num="25" count="0" type="stmt"/>
+      <line num="25" count="1" type="stmt"/>
       <line num="26" count="1" type="stmt"/>
+      <line num="27" count="0" type="stmt"/>
+      <line num="28" count="0" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

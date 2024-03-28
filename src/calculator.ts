@@ -12,8 +12,11 @@ export class Calculator {
         return a * b;
     }
 
-    public Div(a: number, b: number): number {
-        return a / b;
+    public Div(a: number, b: number) {
+        if (b==0)
+            return "Hiba";
+        else
+            return a / b;
     }
 
     public Sqrt(a: number): number {
