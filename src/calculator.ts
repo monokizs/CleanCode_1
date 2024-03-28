@@ -4,29 +4,25 @@ export class Calculator {
         return a + b;
     }
     
-    public Sub(a: number, b: number): number {
+    public Substract(a: number, b: number): number {
         return a - b;
     }
 
-    public Mul(a: number, b: number): number {
+    public Multiplication(a: number, b: number): number {
         return a * b;
     }
 
-    public Div(a: number, b: number) {
-        if (b==0)
-            return "Hiba";
-        else
-            return a / b;
+    public Divide(a: number, b: number): number {
+        if (b==0) throw new Error('Cannot divide by zero.');
+        return a / b;
     }
 
-    public Sqrt(a: number) {
-        if (a<0)
-            return "Hiba";
-        else
-            return Math.sqrt(a);
+    public SquareRoot(a: number): number {
+        if (a<0) throw new Error('Cannot calculate square root of a negative number.');
+        return Math.sqrt(a);
     }
 
-    public Pow(a: number, b: number): number {
+    public Power(a: number, b: number): number {
         return Math.pow(a,b);
     }
 }

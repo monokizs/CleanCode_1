@@ -7,15 +7,13 @@ describe("Calculator tests", () => {
         calculator = new Calculator();
     })
 
-    /***********************
-     ********* Add *********
-     ***********************/
+    //** Add **
 
-    test('Be: két egész szám, Előállítja az összeget, Ki: két szám összege', () => {
+    test('Given I have 2 integers, When a=5 and b=3, Then the result of add a and b', () => {
         // Arrange
         const a = 5;
         const b = 3;
-        const expected = 8; // a+b
+        const expected = 8; 
 
         // Act
         const result = calculator.Add(a, b);
@@ -24,11 +22,11 @@ describe("Calculator tests", () => {
         expect(result).toBe(expected);
     })
 
-    test('Be: két egész szám - egyik negatív, Előállítja az összeget, Ki: két szám összege', () => {
+    test('Given I have 2 integers, When a=-5 and b=3, Then the result of add a and b', () => {
         // Arrange
         const a = -5;
         const b = 3;
-        const expected = -2; // a+b
+        const expected = -2; 
 
         // Act
         const result = calculator.Add(a, b);
@@ -37,11 +35,11 @@ describe("Calculator tests", () => {
         expect(result).toBe(expected);
     })
 
-    test('Be: egy egész szám, Előállítja a 0+szám összeget, Ki: 0 és a szám összege', () => {
+    test('Given I have 2 integers, When a=0 and b=3, Then the result of add a and b', () => {
         // Arrange
         const a = 0;
         const b = 3;
-        const expected = 3; // a+b
+        const expected = 3; 
 
         // Act
         const result = calculator.Add(a, b);
@@ -50,7 +48,7 @@ describe("Calculator tests", () => {
         expect(result).toBe(expected);
     })
 
-    test('Be: két lebegőpontos szám, Előállítja a két szám összeget, Ki: a két szám összege', () => {
+    test('Given I have 2 floating-point numbers, When a=3.1415 and b=2.7182, Then the result of add a and b', () => {
         // Arrange
         const a = 3.1415;
         const b = 2.7182;
@@ -60,10 +58,10 @@ describe("Calculator tests", () => {
         const result = calculator.Add(a, b);
 
         // Assert
-        expect(result).toBe(expected);
+        expect(result).toBeCloseTo(expected,4);
     })
 
-    test('Be: két egész szám, Előállítja a két szám összeget, Ki: a+b ?= b+a', () => {
+    test('Given I have 2 integers, When a=5 and b=3, Then the result is the addition commutative', () => {
         // Arrange
         const a = 5;
         const b = 3;
@@ -76,401 +74,375 @@ describe("Calculator tests", () => {
         expect(result1).toBe(result2);
     })
 
-    /*************************
-     ********** Sub **********
-     *************************/
+    //** Substract **
 
-     test('Be: két pozitív egész szám (a>b), Előállítja a két szám különbségét, Ki: a-b', () => {
+     test('Given I have 2 integers, When a=5 and b=3, Then the result of minus b out of a', () => {
         // Arrange
         const a = 5;
         const b = 3;
-        const expected = 2; // a-b
+        const expected = 2; 
 
         // Act
-        const result = calculator.Sub(a,b);
+        const result = calculator.Substract(a,b);
         
 
         // Assert
         expect(result).toBe(expected);
     })
 
-    test('Be: két pozitív egész szám (b>a), Előállítja a két szám különbségét, Ki: a-b', () => {
+    test('Given I have 2 integers, When a=3 and b=5, Then the result of minus b out of a', () => {
         // Arrange
         const a = 3;
         const b = 5;
-        const expected = -2; // a-b
+        const expected = -2; 
 
         // Act
-        const result = calculator.Sub(a,b);
+        const result = calculator.Substract(a,b);
         
 
         // Assert
         expect(result).toBe(expected);
     })
 
-    test('Be: két negatív egész szám, Előállítja a két szám különbségét, Ki: a-b', () => {
+    test('Given I have 2 integers, When a=-5 and b=-3, Then the result of minus b out of a', () => {
         // Arrange
         const a = -5;
         const b = -3;
-        const expected = -2; // a-b
+        const expected = -2; 
 
         // Act
-        const result = calculator.Sub(a,b);
+        const result = calculator.Substract(a,b);
         
 
         // Assert
         expect(result).toBe(expected);
     })
 
-    test('Be: egy negatív egész szám, Előállítja a 0 és a szám különbségét, Ki: 0-a', () => {
+    test('Given I have 2 integers, When a=0 and b=-3, Then the result of minus b out of a', () => {
         // Arrange
-        const a = -5;
-        const expected = 5; // 0-b
+        const a = 0;
+        const b = -3;
+        const expected = 3; 
 
         // Act
-        const result = calculator.Sub(0,a);
+        const result = calculator.Substract(a,b);
         
 
         // Assert
         expect(result).toBe(expected);
     })
 
-    test('Be: két lebegőpontos szám, Előállítja a két szám különbségét, Ki: a-b', () => {
+    test('Given I have 2 floating-point numbers, When a=3.1415 and b=2.718, Then the result of minus b out of a', () => {
         // Arrange
         const a = 3.1415;
         const b = 2.7182;
-        const expected = 0.4233; // a-b
+        const expected = 0.4233; 
 
         // Act
-        //const result = Number((Math.round(calculator.Sub(a,b)*10000)/10000).toFixed(4));
-        const result = Number(calculator.Sub(a,b).toFixed(4));
+        const result = calculator.Substract(a,b);
 
         // Assert
-        expect(result).toBe(expected);
+        expect(result).toBeCloseTo(expected,4);
     })
 
-    /*************************
-     ********** Mul **********
-     *************************/
-     test('Be: két egész szám, Előállítja a szorzatot, Ki: két szám szorzata', () => {
+    //** Multiplication **
+
+    test('Given I have 2 integers, When a=5 and b=3, Then the result of product of two numbers', () => {
         // Arrange
         const a = 5;
         const b = 3;
-        const expected = 15; // a*b
+        const expected = 15; 
 
         // Act
-        const result = calculator.Mul(a, b);
+        const result = calculator.Multiplication(a, b);
 
         // Assert
         expect(result).toBe(expected);
     })
 
-    test('Be: két egész szám - egyik negatív, Előállítja az szorzatot, Ki: két szám szorzata', () => {
+    test('Given I have 2 integers, When a=-5 and b=3, Then the result of product of two numbers', () => {
         // Arrange
         const a = -5;
         const b = 3;
-        const expected = -15; // a*b
+        const expected = -15; 
 
         // Act
-        const result = calculator.Mul(a, b);
+        const result = calculator.Multiplication(a, b);
 
         // Assert
         expect(result).toBe(expected);
     })
 
-    test('Be: egy egész szám, Előállítja a 0*szám szorzatot, Ki: 0 és a szám szorzata', () => {
+    test('Given I have 2 integers, When a=0 and b=3, Then the result of product of two numbers', () => {
         // Arrange
         const a = 0;
         const b = 3;
-        const expected = 0; // a*b
+        const expected = 0; 
 
         // Act
-        const result = calculator.Mul(a, b);
+        const result = calculator.Multiplication(a, b);
 
         // Assert
         expect(result).toBe(expected);
     })
 
-    test('Be: két lebegőpontos szám, Előállítja a két szám szorzatát, Ki: a két szám szorzata', () => {
+    test('Given I have 2 floating-point numbers, When a=0 and b=3, Then the result of product of two numbers', () => {
         // Arrange
         const a = 3.1415;
         const b = 2.7182;
         const expected = 8.5392253; // a*b
 
         // Act
-        const result = calculator.Mul(a, b);
+        const result = calculator.Multiplication(a, b);
 
         // Assert
         expect(result).toBe(expected);
     })
 
-    test('Be: két egész szám, Előállítja a két szám szorzatát, Ki: a*b ?= b*a', () => {
+    test('Given I have 2 integers, When a=5 and b=3, Then the result is the multiplication commutative', () => {
         // Arrange
         const a = 5;
         const b = 3;
 
         // Act
-        const result1 = calculator.Mul(a, b);
-        const result2 = calculator.Mul(b, a);
+        const result1 = calculator.Multiplication(a, b);
+        const result2 = calculator.Multiplication(b, a);
 
         // Assert
         expect(result1).toBe(result2);
     })
 
+    //** Divide **
 
-    /*************************
-     ********** Div **********
-     *************************/
-     test('Be: két egész szám, Előállítja az osztás eredményét, Ki: két szám osztásának eredménye', () => {
+    test('Given I have 2 integers, When a=5 and b=3, Then the result of a divided by b', () => {
         // Arrange
         const a = 5;
         const b = 3;
-        const expected = 1.6667; // a/b
+        const expected = 1.6667; 
 
         // Act
-        let result = calculator.Div(a,b);
-        if (typeof(result)!="string")
-            result = Number(Number(result).toFixed(4));
+        const result = calculator.Divide(a,b);
+        
+        // Assert
+        expect(result).toBeCloseTo(expected,4);
+    })
+
+    test('Given I have 2 integers, When a=-5 and b=3, Then the result of a divided by b', () => {
+        // Arrange
+        const a = -5;
+        const b = 3;
+        const expected = -1.6667; 
+
+        // Act
+        const result = calculator.Divide(a,b);
+        
+        // Assert
+        expect(result).toBeCloseTo(expected,4);
+    })
+
+    test('Given I have 2 integers, When a=0 and b=3, Then the result of a divided by b', () => {
+        // Arrange
+        const a = 0;
+        const b = 3;
+        const expected = 0;
+
+        // Act
+        const result = calculator.Divide(a,b);
+
+        // Assert
+        expect(result).toBe(expected);
+    })
+
+    test('Given I have 2 integers, When a=5 and b=0, Then the result of a divided by b is an error', () => {
+        // Arrange
+        const a = 5;
+        const b = 0;
+        
+        // Act
+        //const result = calculator.Divide(a,b);
+        
+        // Assert
+        expect(() => calculator.Divide(a,b)).toThrow();
+    })
+
+    
+    //** SquareRoot **
+    
+    test('Given I have 1 integer, When a=5, Then the result of the square root of the number', () => {
+        // Arrange
+        const a = 5;
+        const expected = 2.2361; 
+
+        // Act
+        const result = calculator.SquareRoot(a);
+        
+        // Assert
+        expect(result).toBeCloseTo(expected,4);
+    })
+
+    test('Given I have 1 integer, When a=0, Then the result of the square root of the number', () => {
+        // Arrange
+        const a = 0;
+        const expected = 0; 
+
+        // Act
+        const result = calculator.SquareRoot(a);
         
         // Assert
         expect(result).toBe(expected);
     })
 
-    test('Be: két egész szám - egyik negatív, Előállítja az osztás eredményét, Ki: két szám osztásának eredménye', () => {
+    test('Given I have 1 integer, When a=-5, Then the result of the square root is an error', () => {
         // Arrange
         const a = -5;
-        const b = 3;
-        const expected = -1.6667; // a/b
-
+        
         // Act
-        let result = calculator.Div(a,b);
-        if (typeof(result)!="string")
-            result = Number(Number(result).toFixed(4));
+        //const result=calculator.SquareRoot(a);
 
         // Assert
-        expect(result).toBe(expected);
+        expect(() => calculator.SquareRoot(a)).toThrow();
     })
 
-    test('Be: egy egész szám, Előállítja a 0/szám eredményét, Ki: 0/szám eredménye', () => {
-        // Arrange
-        const a = 0;
-        const b = 3;
-        const expected = 0; // a/b
+    //** Power **
 
-        // Act
-        let result = calculator.Div(a,b);
-        if (typeof(result)!="string")
-            result = Number(Number(result).toFixed());
-
-        // Assert
-        expect(result).toBe(expected);
-    })
-
-    test('Be: egy egész szám, Előállítja a szám/0 eredményét, Ki: szám/0 eredménye', () => {
-        // Arrange
-        const a = 5;
-        const b = 0;
-        const expected = "Hiba"; // a/b
-
-        // Act
-        let result = calculator.Div(a,b);
-        if (typeof(result)!="string")
-            result = Number(Number(result).toFixed(4));
-
-        // Assert
-        expect(result).toBe(expected);
-    })
-
-    
-
-    
-    /*************************
-     ********* Sqrt **********
-     *************************/
-     test('Be: egy egész szám, Előállítja a négyzetgyök(szám) értékét, Ki: négyzegyök(szám) eredménye', () => {
-        // Arrange
-        const a = 5;
-        const expected = 2.2361; // sqrt(a)
-
-        // Act
-        let result = calculator.Sqrt(a);
-        if (typeof(result)!="string")
-            result = Number(Number(result).toFixed(4));
-
-        // Assert
-        expect(result).toBe(expected);
-    })
-
-    test('Be: egy egész szám (a=0), Előállítja a négyzetgyök(szám) értékét, Ki: négyzegyök(szám) eredménye', () => {
-        // Arrange
-        const a = 0;
-        const expected = 0; // sqrt(a)
-
-        // Act
-        let result = calculator.Sqrt(a);
-        if (typeof(result)!="string")
-            result = Number(Number(result).toFixed(4));
-
-        // Assert
-        expect(result).toBe(expected);
-    })
-
-    test('Be: egy egész szám (a<0), Előállítja a négyzetgyök(szám) értékét, Ki: négyzegyök(szám) eredménye - Hiba', () => {
-        // Arrange
-        const a = -5;
-        const expected = "Hiba"; // sqrt(a)
-
-        // Act
-        let result = calculator.Sqrt(a);
-        if (typeof(result)!="string")
-            result = Number(Number(result).toFixed(4));
-
-        // Assert
-        expect(result).toBe(expected);
-    })
-
-
-    /*************************
-     ********* Pow ***********
-     *************************/
-     test('Be: két egész szám, Előállítja az a^b hatványt, Ki: a^b', () => {
+    test('Given I have 2 integers, When a=5 and b=3, Then the result of b power of a', () => {
         // Arrange
         const a = 5;
         const b = 3;
-        const expected = 125; // a^b
+        const expected = 125; 
 
         // Act
-        const result = calculator.Pow(a, b);
+        const result = calculator.Power(a, b);
 
         // Assert
         expect(result).toBe(expected);
     })
 
-    test('Be: két egész szám (a<0), Előállítja az a^b hatványt, Ki: a^b', () => {
+    test('Given I have 2 integers, When a=-5 and b=3, Then the result of b power of a', () => {
         // Arrange
         const a = -5;
         const b = 3;
         const expected = -125; // a^b
 
         // Act
-        const result = calculator.Pow(a, b);
+        const result = calculator.Power(a, b);
 
         // Assert
         expect(result).toBe(expected);
     })
 
-    test('Be: két egész szám (b<0), Előállítja az a^b hatványt, Ki: a^b', () => {
+    test('Given I have 2 integers, When a=5 and b=-3, Then the result of b power of a', () => {
         // Arrange
         const a = 5;
         const b = -3;
-        const expected = 0.008; // a^b
+        const expected = 0.008;
 
         // Act
-        const result = Number(calculator.Pow(a, b).toFixed(3));
+        const result = calculator.Power(a, b);
 
         // Assert
-        expect(result).toBe(expected);
+        expect(result).toBeCloseTo(expected,3);
     })
 
-    test('Be: két egész szám (a<0 és b<0), Előállítja az a^b hatványt, Ki: a^b', () => {
+    test('Given I have 2 integers, When a=-5 and b=-3, Then the result of b power of a', () => {
         // Arrange
         const a = -5;
         const b = -3;
-        const expected = -0.008; // a^b
+        const expected = -0.008; 
 
         // Act
-        const result = Number(calculator.Pow(a, b).toFixed(3));
+        const result = calculator.Power(a, b);
 
         // Assert
-        expect(result).toBe(expected);
+        expect(result).toBeCloseTo(expected,3);
     })
 
-    test('Be: egy egész szám (a>0 és b=0), Előállítja az a^0 hatványt, Ki: a^0', () => {
+    test('Given I have 2 integers, When a=5 and b=0, Then the result of b power of a', () => {
         // Arrange
         const a = 5;
         const b = 0;
-        const expected = 1; // a^b
+        const expected = 1; 
 
         // Act
-        const result = calculator.Pow(a, b);
+        const result = calculator.Power(a, b);
 
         // Assert
         expect(result).toBe(expected);
     })
 
-    test('Be: egy egész szám (a=0 és b>0), Előállítja az 0^b hatványt, Ki: 0^b', () => {
+    test('Given I have 2 integers, When a=0 and b=3, Then the result of b power of a', () => {
         // Arrange
         const a = 0;
         const b = 3;
-        const expected = 0; // a^b
+        const expected = 0; 
 
         // Act
-        const result = calculator.Pow(a, b);
+        const result = calculator.Power(a, b);
 
         // Assert
         expect(result).toBe(expected);
     })
 
-    test('Be: két lebegőpontos szám, Előállítja az a^b hatványt, Ki: a^b', () => {
+    test('Given I have 2 floating-point numbers, When a=3.1415 and b=2.7182, Then the result of b power of a', () => {
         // Arrange
         const a = 3.1415;
         const b = 2.7182;
         const expected = 22.4553; // a^b
 
         // Act
-        const result = Number(calculator.Pow(a, b).toFixed(4));
+        const result = calculator.Power(a, b);
 
         // Assert
-        expect(result).toBe(expected);
+        expect(result).toBeCloseTo(expected,4);
     })
 
-    test('Be: egy egész szám (b>0), Előállítja az MAX_VALUE^b hatványt, Ki: MAX_VALUE^b', () => {
+    test('Given I have 2 integers, When a=MAX_VALUE and b=3, Then the result of b power of a', () => {
         // Arrange
         const a = Number.MAX_VALUE;
-        const b = 2;
-        const expected = Infinity; // a^b
+        const b = 3;
+        const expected = Infinity; 
 
         // Act
-        const result = calculator.Pow(a, b);
+        const result = calculator.Power(a, b);
 
         // Assert
         expect(result).toBe(expected);
     })
 
-    test('Be: egy egész szám (a>0), Előállítja az a^MAX_VALUE hatványt, Ki: a^MAX_VALUE', () => {
+    test('Given I have 2 integers, When a=5 and b=MAX_VALUE, Then the result of b power of a', () => {
         // Arrange
         const a = 5;
         const b = Number.MAX_VALUE;
-        const expected = Infinity; // a^b
+        const expected = Infinity; 
 
         // Act
-        const result = calculator.Pow(a, b);
+        const result = calculator.Power(a, b);
 
         // Assert
         expect(result).toBe(expected);
     })
 
-    test('Be: egy egész szám (b>0), Előállítja az MIN_VALUE^b hatványt, Ki: MIN_VALUE^b', () => {
+    test('Given I have 2 integers, When a=MIN_VALUE and b=3, Then the result of b power of a', () => {
         // Arrange
         const a = Number.MIN_VALUE;
-        const b = 2;
-        const expected = 0; // a^b
+        const b = 3;
+        const expected = 0; 
 
         // Act
-        const result = calculator.Pow(a, b);
+        const result = calculator.Power(a, b);
 
         // Assert
         expect(result).toBe(expected);
     })
 
-    test('Be: egy egész szám (a>0), Előállítja az a^MIN_VALUE hatványt, Ki: a^MIN_VALUE', () => {
+    test('Given I have 2 integers, When a=5 and b=MIN_VALUE, Then the result of b power of a', () => {
         // Arrange
         const a = 5;
         const b = Number.MIN_VALUE;
-        const expected = 1; // a^b
+        const expected = 1; 
 
         // Act
-        const result = calculator.Pow(a, b);
+        const result = calculator.Power(a, b);
 
         // Assert
         expect(result).toBe(expected);
